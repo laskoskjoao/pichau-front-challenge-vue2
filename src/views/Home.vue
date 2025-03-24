@@ -1,15 +1,20 @@
 <template>
-  <div class="home">
-    <div class="container">
-      <h1>Desafio Vue.js - Tabela de Comparação de Preços</h1>
-      <p>Implemente o componente <code>PriceComparisonTable</code> conforme as especificações.</p>
-    </div>
-  </div>
+  <v-container>
+    <h1 class="text-center">Tabela de Comparação de Preços</h1>
+    <PriceComparisonTable :produtos="mockProdutos" />
+  </v-container>
 </template>
 
 <script>
+import PriceComparisonTable from '@/components/PriceComparisonTable.vue';
+import { mockProdutos } from '@/mockData.js';
+
 export default {
-  name: 'HomeView'
+  name: 'HomeView',
+  components: { PriceComparisonTable },
+  data() {
+    return { mockProdutos };
+  }
 };
 </script>
 
